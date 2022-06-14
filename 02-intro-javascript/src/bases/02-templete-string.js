@@ -10,5 +10,7 @@ ${nombre}
 
 console.log(nombreCompleto);
 
+// Funcion de Flecha
 const getSaludo = (nombre) => "Hola " + nombre;
+
 console.log(`Este es un texto: ${getSaludo(nombre)}`);

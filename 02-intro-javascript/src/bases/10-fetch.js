@@ -1,4 +1,4 @@
-const apikey = "tZOqRBTBInCsYumreKFSURMBATvhdCFK";
+const apikey = "tZOqRBTBInCsYumreKFSURMBATvhdCFK"; // MANDAR A LLAMAR UNA KEY
 
 const peticion = fetch(`https://api.giphy.com/v1/gifs/random?apikey=${apikey}`);
 

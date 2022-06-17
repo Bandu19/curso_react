@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { Navigate, useParams, useNavigate } from "react-router-dom";
 import { getHeroById } from "../helpers";
 
@@ -7,14 +8,25 @@ export const HeroPages = () => {
   // const { id, ...rest } = useParams(); // Desustructuramos// CUIDADO
   // console.log(id, rest);
   const { id } = useParams();
-  const hero = getHeroById(id);
+  /**
+   * El "useMemo" es otro metodo de Hooks
+   *
+   * Hace en memorizar sus valores o memorizar
+   * las funciones.
+   *
+   * Dentro del Callback va disparar cada vez que sus
+   * dependencias cambien.
+   */
+  const hero = useMemo(() => getHeroById(id), [id]);
   console.log(hero);
 
   const navegador = useNavigate();
 
   const onNavigateBack = () => {
     /**
-     *
+     * El -1 Principalmente es para
+     * que regreses a la pagina anterior
+     * es un nuevo metodo.
      */
     navegador(-1, {
       replace: true,

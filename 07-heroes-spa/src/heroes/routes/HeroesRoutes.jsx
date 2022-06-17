@@ -15,7 +15,8 @@ export const HeroesRoutes = () => {
           <Route path="dc" element={<DcPage />} />
 
           <Route path="search" element={<SearchPage />} />
-          <Route path="hero" element={<HeroPages />} />
+          {/* MANDAR UN COMODIN ES DECIR UN SEGMENTO */}
+          <Route path="hero/:id" element={<HeroPages />} />
 
           <Route path="/" element={<Navigate to="/marvel" />} />
         </Routes>

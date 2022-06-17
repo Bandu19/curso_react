@@ -1,3 +1,5 @@
+// RUTA HIJO
+
 import { Navigate, Route, Routes } from "react-router";
 import { DcPage, HeroPages, MarvelPage, SearchPage } from "../pages";
 import { Navbar } from "../../ui";

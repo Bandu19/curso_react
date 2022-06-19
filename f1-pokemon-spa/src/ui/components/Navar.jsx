@@ -33,15 +33,6 @@ export const Navbar = () => {
           >
             POKEMONES
           </NavLink>
-
-          <NavLink
-            className={({ isActive }) =>
-              `nav-item nav-link ${isActive ? "active" : ""}`
-            }
-            to="/dc"
-          >
-            DC
-          </NavLink>
         </div>
       </div>
 

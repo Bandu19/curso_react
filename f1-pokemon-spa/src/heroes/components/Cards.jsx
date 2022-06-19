@@ -3,17 +3,13 @@ import { HeroesList } from "./HeroesList";
 
 export const Cards = ({ results }) => {
   return (
-    <div className="container">
-      <ul className="Cards">
-        {/* aqui tenemos que mapear los results para obtener url de
+    <div className="row rows-cols-1 row-cols-md-3 g-5">
+      {/* aqui tenemos que mapear los results para obtener url de
                   cada uno de los 20 pokemones.
               */}
-        {results.map((p) => (
-          <li className="card-item" key={p.name}>
-            <HeroesList url={p.url} />
-          </li>
-        ))}
-      </ul>
+      {results.map((p) => (
+        <HeroesList key={p.name} url={p.url} />
+      ))}
     </div>
   );
 };

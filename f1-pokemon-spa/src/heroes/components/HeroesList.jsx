@@ -8,19 +8,22 @@ export const HeroesList = ({ url }) => {
       {cargando ? (
         <h1>Cargando</h1>
       ) : (
-        <div className="cards" style={{ width: "14rem" }}>
-          <div className="card-header">
-            <h5 className="card-title">{data.id}</h5>
-          </div>
+        <div className="card-columns">
+          <div className="card">
+            <div className="card-img-top img-fluid">
+              <img
+                src={data.sprites.other.home.front_default}
+                className="card-img"
+                alt="SuperHero"
+              />
+            </div>
+            <div className="text-center card-block">
+              <h4 className="card-text">{data.forms[0].name}</h4>
+              <p className="text-muted">#0{data.id}</p>
+            </div>
 
-          <div className="card-body">
-            <img
-              src={data.sprites.other.dream_world.front_default}
-              alt="pokemon"
-            />
-          </div>
-          <div className="card-footer">
-            <p className="card-text text-capitalize">{data.forms[0].name}</p>
+            {/* <h5 className="card-title">{data.id}</h5> */}
+            {/* <p className="card-text text-capitalize">{data.forms[0].name}</p> */}
           </div>
         </div>
       )}

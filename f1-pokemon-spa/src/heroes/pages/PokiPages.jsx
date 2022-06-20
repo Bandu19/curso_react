@@ -1,3 +1,16 @@
+import { useParams } from "react-router";
+import { UsePoki } from "../data/UsePoki";
+
 export const PokiPages = () => {
-  return <h1>PokiPages</h1>;
+  const { id } = useParams();
+  const estado = UsePoki(id); // OBJETO
+
+  return (
+    <>
+      <h1>Pokemon:</h1>
+      <hr />
+
+      {estado}
+    </>
+  );
 };

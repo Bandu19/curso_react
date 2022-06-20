@@ -12,13 +12,13 @@ export const HeroesRoutes = () => {
       <Navbar />
       <div className="container">
         <Routes>
-          <Route path="marvel" element={<PokemonesPages />} />
+          <Route path="pokemons" element={<PokemonesPages />} />
 
           <Route path="search" element={<SearchPage />} />
           {/* MANDAR UN COMODIN ES DECIR UN SEGMENTO */}
-          <Route path="hero/:id" element={<PokiPages />} />
+          <Route path="pokemons/:id" element={<PokiPages />} />
 
-          <Route path="/" element={<Navigate to="/marvel" />} />
+          <Route path="/" element={<Navigate to="/pokemons" />} />
         </Routes>
       </div>
     </>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { UsePokemon } from "../data/UsePokemon ";
 
 export const HeroesList = ({ url }) => {
@@ -12,7 +13,7 @@ export const HeroesList = ({ url }) => {
           <div className="card">
             <div className="card-img-top img-fluid">
               <img
-                src={data.sprites.other.home.front_default}
+                src={data.sprites.other.home.front_default} //MANDAR A LLAMAR LA IMAGEN //56:33
                 className="card-img"
                 alt="SuperHero"
               />
@@ -20,10 +21,8 @@ export const HeroesList = ({ url }) => {
             <div className="text-center card-block">
               <h4 className="card-text">{data.forms[0].name}</h4>
               <p className="text-muted">#0{data.id}</p>
+              <Link to={`/pokemons/${data.id}`}>Mas...</Link>
             </div>
-
-            {/* <h5 className="card-title">{data.id}</h5> */}
-            {/* <p className="card-text text-capitalize">{data.forms[0].name}</p> */}
           </div>
         </div>
       )}

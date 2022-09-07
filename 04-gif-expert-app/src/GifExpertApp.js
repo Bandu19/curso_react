@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { AddCategory } from "./components/AddCategory"
+import { GifGrid } from "./components/GifGrid"
 
 export const GifExpertApp = () => {
 
@@ -8,11 +9,14 @@ export const GifExpertApp = () => {
     
     const onAddCategory = (newCategoria) =>{
         // Agrega valores al array y hace copia
-        console.log(newCategoria)
-        setCategories([...categories,newCategoria]) // Desestructuración de arreglo
+        // console.log(newCategoria)
+
+        // convierte todo a minuscula para hace la validadcion
+        const sameCategory = categories.find(element => element.toLocaleLowerCase() === newCategoria.toLocaleLowerCase())
+        console.log(sameCategory)
+        if ( !sameCategory ) setCategories([newCategoria, ...categories]) // Desestructuración de arreglo            
     }
 
- 
  return (
     <>  
         {/* titulo */}
@@ -20,16 +24,18 @@ export const GifExpertApp = () => {
         
         {/* Input */}
         <AddCategory 
-            // setCategories = {setCategories}
             onNewCategory = {event => onAddCategory(event)}
         />
         
         {/* Listado de gif */}
         <ol>
             {
-                categories.map(category =>{
-                    return <li key={category}>{category}</li>
-                })
+                categories.map(category =>(
+                    <GifGrid
+                        key = {category}
+                        category = {category}
+                    />
+                ))
             }
         </ol>
 

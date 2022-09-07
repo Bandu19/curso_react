@@ -14,7 +14,7 @@ export const AddCategory = ({onNewCategory}) => {
     const onSubmit = (event) =>{
         event.preventDefault()
         if(inputValor.trim().length <=1) return // Elimina espaciados de un input
-        console.log(inputValor.trim())
+        // console.log(inputValor.trim())
 
         // setCategories( categories => [inputValor, ...categories])
         onNewCategory (inputValor.trim())
